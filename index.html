@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taskbook Dashboard</title>
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Borel&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/31dbbdf38e.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="todo-app">
+            <h2>Taskbook<img class="itag" src="images/icon.png" alt=""><i class="fa-brands fa-whatsapp" onclick="share()"></i></h2>
+            <div class="row">
+                <input type="text" id="input-content" placeholder="Add a new Task">
+                <button onclick="addTask()">Add</button>
+            </div>
+            <ul id="list-content">
+                <!-- <li class="checked">Task 1</li>
+                <li>Task 2</li>
+                <li>Task 3</li> -->
+            </ul>
+            <button id="logout">Log-Out</button>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>Copyright <a class="atag" href="https://sandeep96744.github.io/Portfolio/">© Sandeep</a> 2023. I'm Loving it!❤️</p>
+    </div>
+    <script src="script.js"></script>
+    <script type="module" src="main.js"></script>
+</body>
+</html>
