@@ -2,11 +2,12 @@ const inputContent = document.getElementById("input-content");
 const listContent = document.getElementById("list-content");
 
 function addTask() {
-    if(inputContent.value == '')
+    const task = inputContent.value.trim();
+    if(task == '')
         alert("Write some Task to add!");
     else {
         let li = document.createElement("li");
-        li.innerHTML = inputContent.value;
+        li.innerHTML = task;
         listContent.appendChild(li);
         let span = document.createElement("span");
         span.innerHTML = "\u00d7";
