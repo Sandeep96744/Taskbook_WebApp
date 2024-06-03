@@ -40,25 +40,39 @@ showData();
 
 function share() {
     const liElements = listContent.querySelectorAll("li");
-    const liContentArray = [];
+    const completedTasks = [];
+    const uncompletedTasks = [];
 
     function addNumbering(index, content) {
         return (index + 1) + ". " + content;
     }
 
-    liElements.forEach((li, index) => {
+    let uncompletedIndex = 0;
+    let completedIndex = 0;
+    liElements.forEach((li) => {
         const val = li.textContent;
         const str = val.slice(0, -1);
-        liContentArray.push(addNumbering(index, str));
+        if (li.classList.contains("checked")) {
+            completedTasks.push(addNumbering(completedIndex++, str));
+        } else {
+            uncompletedTasks.push(addNumbering(uncompletedIndex++, str));
+        }
     });
-    if(liContentArray.length === 0) {
+
+    if (completedTasks.length === 0 && uncompletedTasks.length === 0) {
         alert("No Items available to Share");
         return;
     }
-    const messageText = "Check out! My To-Do List:\n" + liContentArray.join("\n");
+    let messageText = "Check out! My To-Do List:\n\n";
+    if (uncompletedTasks.length > 0) {
+        messageText += "Incompleted Tasks:\n" + uncompletedTasks.join("\n") + "\n\n";
+    }
+
+    if (completedTasks.length > 0) {
+        messageText += "Completed Tasks:\n" + completedTasks.join("\n") + "\n\n";
+    }
     const encodedMessage = encodeURIComponent(messageText);
 
     const whatsappURL = "https://api.whatsapp.com/send?text=" + encodedMessage;
     window.open(whatsappURL, "_blank");
 } 
-

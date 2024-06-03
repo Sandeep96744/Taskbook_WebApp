@@ -108,6 +108,9 @@ ul li {
     user-select: none;
     cursor: pointer;
     transition: transform 0.2s;
+    word-wrap: break-word; /* Allows long words to be broken and wrap to the next line */
+    overflow-wrap: break-word; /* Ensures that long words are broken and wrapped */
+    max-width: 100%; 
 }
 
 ul li::before {
@@ -119,6 +122,9 @@ ul li::before {
     background-image: url(images/uncheck.png);
     background-size: cover;
     margin-right: 15px;
+    word-wrap: break-word; /* Allows long words to be broken and wrap to the next line */
+    overflow-wrap: break-word; /* Ensures that long words are broken and wrapped */
+    max-width: 100%; 
 }
 
 ul li.checked {
